@@ -1,0 +1,15 @@
+.navMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 50px;
+  background-color: #0070f3;
+  height: 50px;
+  padding: 0 50px;
+
+  .title {
+    font-family: Work Sans;
+    color: #fff;
+    font-size: 20px;
+  }
+}

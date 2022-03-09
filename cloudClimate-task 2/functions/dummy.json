@@ -1,0 +1,48 @@
+{
+  "documents": [
+    {
+      "nameTeam": "team1",
+      "score": 5
+    },
+    {
+      "nameTeam": "team2",
+      "score": 7
+    },
+    {
+      "nameTeam": "team3",
+      "score": 3
+    },
+    {
+      "nameTeam": "team4",
+      "score": 4
+    },
+    {
+      "nameTeam": "team5",
+      "score": 10
+    },
+    {
+      "nameTeam": "team6",
+      "score": 8
+    },
+    {
+      "nameTeam": "team7",
+      "score": 9
+    },
+    {
+      "nameTeam": "team8",
+      "score": 8
+    },
+    {
+      "nameTeam": "team9",
+      "score": 2
+    },
+    {
+      "nameTeam": "team10",
+      "score": 3
+    },
+    {
+      "nameTeam": "team11",
+      "score": 1
+    }
+  ]
+}

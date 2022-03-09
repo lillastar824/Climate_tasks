@@ -1,0 +1,11 @@
+$color-primary: #0070f3;
+$font-primary: "Work Sans";
+
+.climate-title {
+  font-family: $font-primary;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 50px);
+}

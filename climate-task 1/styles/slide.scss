@@ -1,0 +1,23 @@
+.main-slide {
+  max-width: 500px;
+  width: 500px;
+  height: 351px;
+  left: calc(50% - 500px / 2 - 1520.5px);
+  top: calc(50% - 351px / 2 + 66.5px);
+  border-radius: 74px;
+  border: 1px solid #6231ec;
+  padding: 30px;
+
+  .slide-title {
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 105.3%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #818181;
+    margin-bottom: 15px;
+  }
+}
