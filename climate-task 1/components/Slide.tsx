@@ -1,9 +1,7 @@
-function Slide({ children }: any) {
+function Slide({ children, question }: any) {
   return (
     <div className="main-slide">
-      <div className="slide-title">
-        Which of the below statements about electricity is not true
-      </div>
+      <div className="slide-title">{question}</div>
       {children}
     </div>
   );

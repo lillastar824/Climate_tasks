@@ -1,31 +1,63 @@
-import Image from "next/image";
-import Animation from "../components/Animation";
-import { motion } from "framer-motion";
-import ArrowIcon from "../styles/imges/arrow.png";
-import Link from "next/link";
-function HomePage() {
+import { useState } from "react";
+import Icon from "../components/Icon";
+import QuestionBox from "../components/QuestionBox";
+import Welcome from "../components/Welcome";
+import RightIcon from "../styles/imges/arrow.png";
+import leftIcon from "../styles/imges/leftArrow.png";
+import { DUMMY_QUESTIONS } from "../utils";
+import AnimationTemplate from "../components/AnimationTemplate";
+const HomePage: React.FC = () => {
+  const [selected, setSelected] = useState("");
+  const [curr, setCurr] = useState(0);
+  const [answers, setAnsers] = useState<any>([]);
+  const [isWelcom, setIsWelcom] = useState(false);
+
+  const handleRadioBtn = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ): void => {
+    setSelected(e.target.value);
+  };
+
+  const isRadioSelected = (value: string): boolean => selected === value;
+
+  const handleNext = () => {
+    setCurr((prev) => prev + 1);
+    setAnsers((answers: any) => [...answers, selected]);
+
+    if (curr === DUMMY_QUESTIONS.length - 1) {
+      setIsWelcom(true);
+    }
+  };
+  const handlePrev = () => {
+    setCurr((prev) => prev - 1);
+  };
+
   return (
-    <>
-      <motion.div
-        className="climate-title"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 2 }}
-      >
-        <Animation />
-        <Link href={"/one"}>
-          <motion.div
-            style={{ width: "100px", cursor: "pointer" }}
-            initial={{ x: "-10vw" }}
-            animate={{ x: 0 }}
-            transition={{ delay: 1.2, duration: 2 }}
-          >
-            <Image src={ArrowIcon} alt="arrow-icon" />
-          </motion.div>
-        </Link>
-      </motion.div>
-    </>
+    <AnimationTemplate>
+      <div className="climate-main">
+        {isWelcom ? (
+          <Welcome />
+        ) : (
+          <>
+            {curr > 0 && <Icon icon={leftIcon} handleIconClick={handlePrev} />}
+
+            {DUMMY_QUESTIONS.slice(curr, curr + 1).map((qData, index) => (
+              <QuestionBox
+                key={index}
+                qData={qData}
+                isRadioSelected={isRadioSelected}
+                handleRadioBtn={handleRadioBtn}
+              />
+            ))}
+            {curr < DUMMY_QUESTIONS.length && (
+              <Icon icon={RightIcon} handleIconClick={handleNext} />
+            )}
+          </>
+        )}
+      </div>
+    </AnimationTemplate>
   );
-}
+};
 
 export default HomePage;

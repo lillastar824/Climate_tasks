@@ -7,12 +7,14 @@ label {
   display: flex;
   align-items: center;
   color: #6231ec;
+  cursor: pointer;
 }
 input {
   width: 25px;
   height: 25px;
   border: none;
   margin-right: 15px;
+  cursor: pointer;
 }
 input[type="radio"]:after {
   width: 25px;
